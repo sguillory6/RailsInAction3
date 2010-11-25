@@ -123,4 +123,4 @@ DEPENDENCIES
   cucumber-rails
   mysql2
   rails (= 3.0.1)
-  rspec-rails (= 2.1.0)
+  rspec-rails

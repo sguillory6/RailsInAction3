@@ -29,9 +29,9 @@ gem 'mysql2'
 #   gem 'webrat'
 # end
 
-group :test do
-  gem 'rspec-rails', '2.1.0'
-end
+#group :test do
+  gem 'rspec-rails'
+#end
 
 group :cucumber do
   gem 'cucumber-rails'

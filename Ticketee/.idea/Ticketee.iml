@@ -90,7 +90,7 @@
     </requirement>
     <requirement>
       <requirement>
-        <dependency name="rspec-rails" version="2.1.0" bound="EQUAL" git="false" path="false" doRequire="true" />
+        <dependency name="rspec-rails" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
       </requirement>
       <source from="Gemfile" />
     </requirement>

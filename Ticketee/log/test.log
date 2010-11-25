@@ -272,3 +272,351 @@ Started GET "/projects/1" for 127.0.0.1 at 2010-11-25 00:47:25 -0600
 Rendered projects/show.html.erb within layouts/application (2.6ms)
 Completed 200 OK in 14ms (Views: 5.3ms | ActiveRecord: 12.3ms)
   [1m[35mSQL (5.6ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-25 00:55:48 -0600
+  Processing by ProjectsController#index as HTML
+Rendered projects/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2010-11-25 00:55:48 -0600
+  Processing by ProjectsController#new as HTML
+Rendered projects/new.html.erb within layouts/application (23.7ms)
+Completed 200 OK in 35ms (Views: 26.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2010-11-25 00:55:48 -0600
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>"TextMate 2"}, "commit"=>"Create Project"}
+  [1m[35mSQL (10.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.8ms)[0m  describe `projects`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-25 06:55:48', 'TextMate 2', '2010-11-25 06:55:48')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/projects/1
+Completed 302 Found in 241ms
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2010-11-25 00:55:48 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 1) LIMIT 1[0m
+Rendered projects/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 17ms (Views: 10.7ms | ActiveRecord: 14.2ms)
+  [1m[35mSQL (4.8ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-25 01:03:18 -0600
+  Processing by ProjectsController#index as HTML
+Rendered projects/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2010-11-25 01:03:18 -0600
+  Processing by ProjectsController#new as HTML
+Rendered projects/new.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 33ms (Views: 22.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2010-11-25 01:03:18 -0600
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>"TextMate 2"}, "commit"=>"Create Project"}
+  [1m[35mSQL (4.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (11.5ms)[0m  describe `projects`
+  [1m[36mSQL (11.8ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-25 07:03:18', 'TextMate 2', '2010-11-25 07:03:18')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/projects/1
+Completed 302 Found in 249ms
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2010-11-25 01:03:18 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 1) LIMIT 1[0m
+Rendered projects/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 9ms (Views: 4.9ms | ActiveRecord: 29.1ms)
+  [1m[35mProject Load (0.4ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`name` = 'TextMate 2') LIMIT 1
+  [1m[36mSQL (1.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-25 01:09:31 -0600
+  Processing by ProjectsController#index as HTML
+Rendered projects/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 18ms (Views: 17.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2010-11-25 01:09:32 -0600
+  Processing by ProjectsController#new as HTML
+Rendered projects/new.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 40ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2010-11-25 01:09:32 -0600
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>"TextMate 2"}, "commit"=>"Create Project"}
+  [1m[35mSQL (4.9ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (4.3ms)[0m  describe `projects`
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-25 07:09:32', 'TextMate 2', '2010-11-25 07:09:32')[0m
+  [1m[35mSQL (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/projects/1
+Completed 302 Found in 236ms
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2010-11-25 01:09:32 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (13.6ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 1) LIMIT 1[0m
+Rendered projects/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 28ms (Views: 9.8ms | ActiveRecord: 26.4ms)
+  [1m[35mProject Load (0.4ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`name` = 'TextMate 2') LIMIT 1
+  [1m[36mSQL (13.9ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-25 01:16:48 -0600
+  Processing by ProjectsController#index as HTML
+Rendered projects/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2010-11-25 01:16:48 -0600
+  Processing by ProjectsController#new as HTML
+Rendered projects/new.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 30ms (Views: 21.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2010-11-25 01:16:49 -0600
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>"TextMate 2"}, "commit"=>"Create Project"}
+  [1m[35mSQL (2.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (3.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (10.8ms)[0m  describe `projects`
+  [1m[36mSQL (4.4ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-25 07:16:49', 'TextMate 2', '2010-11-25 07:16:49')[0m
+  [1m[35mSQL (3.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/projects/1
+Completed 302 Found in 251ms
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2010-11-25 01:16:49 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 1) LIMIT 1[0m
+Rendered projects/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 12ms (Views: 5.1ms | ActiveRecord: 24.9ms)
+  [1m[35mProject Load (0.5ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`name` = 'TextMate 2') LIMIT 1
+  [1m[36mSQL (3.9ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-25 01:19:26 -0600
+  Processing by ProjectsController#index as HTML
+Rendered projects/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2010-11-25 01:19:26 -0600
+  Processing by ProjectsController#new as HTML
+Rendered projects/new.html.erb within layouts/application (28.7ms)
+Completed 200 OK in 44ms (Views: 33.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2010-11-25 01:19:26 -0600
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>"TextMate 2"}, "commit"=>"Create Project"}
+  [1m[35mSQL (9.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.5ms)[0m  describe `projects`
+  [1m[36mSQL (5.4ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-25 07:19:26', 'TextMate 2', '2010-11-25 07:19:26')[0m
+  [1m[35mSQL (4.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/projects/1
+Completed 302 Found in 228ms
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2010-11-25 01:19:27 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 1) LIMIT 1[0m
+Rendered projects/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 14ms (Views: 9.0ms | ActiveRecord: 23.0ms)
+  [1m[35mProject Load (1.1ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`name` = 'TextMate 2') LIMIT 1
+  [1m[36mSQL (5.6ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-25 01:24:46 -0600
+  Processing by ProjectsController#index as HTML
+Rendered projects/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2010-11-25 01:24:46 -0600
+  Processing by ProjectsController#new as HTML
+Rendered projects/new.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 37ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2010-11-25 01:24:46 -0600
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>"TextMate 2"}, "commit"=>"Create Project"}
+  [1m[35mSQL (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (9.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (13.2ms)[0m  describe `projects`
+  [1m[36mSQL (11.4ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-25 07:24:46', 'TextMate 2', '2010-11-25 07:24:46')[0m
+  [1m[35mSQL (3.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/projects/1
+Completed 302 Found in 231ms
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2010-11-25 01:24:46 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 1) LIMIT 1[0m
+Rendered projects/show.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 37.8ms)
+  [1m[35mProject Load (7.0ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`name` = 'TextMate 2') LIMIT 1
+  [1m[36mSQL (8.4ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-25 01:24:46 -0600
+  Processing by ProjectsController#index as HTML
+Completed 200 OK in 11ms (Views: 11.1ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2010-11-25 01:24:46 -0600
+  Processing by ProjectsController#new as HTML
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2010-11-25 01:24:46 -0600
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>""}, "commit"=>"Create Project"}
+  [1m[36mSQL (10.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-25 07:24:46', '', '2010-11-25 07:24:46')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/projects/2
+Completed 302 Found in 20ms
+
+
+Started GET "/projects/2" for 127.0.0.1 at 2010-11-25 01:24:46 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 2) LIMIT 1
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 11.3ms)
+  [1m[36mSQL (7.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-25 01:35:09 -0600
+  Processing by ProjectsController#index as HTML
+Rendered projects/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2010-11-25 01:35:09 -0600
+  Processing by ProjectsController#new as HTML
+Rendered projects/new.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 54ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2010-11-25 01:35:09 -0600
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>"TextMate 2"}, "commit"=>"Create Project"}
+  [1m[35mSQL (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (3.8ms)[0m  describe `projects`
+  [1m[36mSQL (8.8ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-25 07:35:09', 'TextMate 2', '2010-11-25 07:35:09')[0m
+  [1m[35mSQL (12.5ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/projects/1
+Completed 302 Found in 336ms
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2010-11-25 01:35:09 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (3.8ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 1) LIMIT 1[0m
+Rendered projects/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 14ms (Views: 5.6ms | ActiveRecord: 31.9ms)
+  [1m[35mProject Load (0.4ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`name` = 'TextMate 2') LIMIT 1
+  [1m[36mSQL (42.4ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-25 01:35:10 -0600
+  Processing by ProjectsController#index as HTML
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 42.8ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2010-11-25 01:35:10 -0600
+  Processing by ProjectsController#new as HTML
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2010-11-25 01:35:10 -0600
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>""}, "commit"=>"Create Project"}
+  [1m[36mSQL (1.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 15ms (Views: 9.4ms | ActiveRecord: 1.5ms)
+  [1m[36mSQL (0.8ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-25 01:39:19 -0600
+  Processing by ProjectsController#index as HTML
+Rendered projects/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 25ms (Views: 24.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2010-11-25 01:39:19 -0600
+  Processing by ProjectsController#new as HTML
+Rendered projects/new.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 43ms (Views: 24.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2010-11-25 01:39:19 -0600
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>"TextMate 2"}, "commit"=>"Create Project"}
+  [1m[35mSQL (2.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (6.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (18.2ms)[0m  describe `projects`
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-25 07:39:19', 'TextMate 2', '2010-11-25 07:39:19')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/projects/1
+Completed 302 Found in 310ms
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2010-11-25 01:39:19 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 1) LIMIT 1[0m
+Rendered projects/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 28.3ms)
+  [1m[35mProject Load (2.4ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`name` = 'TextMate 2') LIMIT 1
+  [1m[36mSQL (2.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (2.1ms)[0m  BEGIN
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-25 01:39:19 -0600
+  Processing by ProjectsController#index as HTML
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2010-11-25 01:39:19 -0600
+  Processing by ProjectsController#new as HTML
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2010-11-25 01:39:19 -0600
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>""}, "commit"=>"Create Project"}
+  [1m[36mSQL (1.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 14ms (Views: 7.9ms | ActiveRecord: 1.5ms)
+  [1m[36mSQL (1.1ms)[0m  [1mROLLBACK[0m

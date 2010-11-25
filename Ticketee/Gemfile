@@ -30,7 +30,7 @@ gem 'mysql2'
 # end
 
 #group :test do
-  gem 'rspec-rails'
+gem 'rspec-rails'
 #end
 
 group :cucumber do

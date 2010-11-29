@@ -2,6 +2,7 @@
 <h2><%= @ticket.title %></h2>
 
 <%= link_to "Edit", [:edit, @project, @ticket] %>
+<%= link_to "Delete", [@project, @ticket], :method => :delete, :confirm => "Do you really want to delete the ticket?" %>
 
 <%= simple_format(@ticket.description) %>
 

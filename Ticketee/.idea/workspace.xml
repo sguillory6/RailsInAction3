@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8aeaf38-e1f1-4d8d-ac42-40013399b659" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/tickets/edit.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/editing_tickets.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/deleting_tickets.feature" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/tickets_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/tickets_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/project.rb" afterPath="$PROJECT_DIR$/app/models/project.rb" />
@@ -49,7 +48,16 @@
       <file leaf-file-name="editing_tickets.feature" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/features/editing_tickets.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="62" selection-start="907" selection-end="907" vertical-scroll-proportion="0.0">
+            <state line="27" column="0" selection-start="1033" selection-end="1033" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="deleting_tickets.feature" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/features/deleting_tickets.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="0" selection-start="653" selection-end="653" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -58,7 +66,7 @@
       <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/tickets/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="126" selection-end="126" vertical-scroll-proportion="-4.0">
+            <state line="3" column="34" selection-start="66" selection-end="66" vertical-scroll-proportion="-1.7142857">
               <folding />
             </state>
           </provider>
@@ -67,7 +75,7 @@
       <file leaf-file-name="tickets_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/tickets_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="0" selection-start="891" selection-end="891" vertical-scroll-proportion="0.7585089">
+            <state line="44" column="4" selection-start="1020" selection-end="1020" vertical-scroll-proportion="0.85575366">
               <folding />
             </state>
           </provider>
@@ -95,15 +103,6 @@
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="18" column="0" selection-start="281" selection-end="281" vertical-scroll-proportion="-10.285714">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ticket_steps.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/features/step_definitions/ticket_steps.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="0" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -164,7 +163,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/models/project.rb" />
         <option value="$PROJECT_DIR$/app/views/tickets/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/tickets/_form.html.erb" />
@@ -177,8 +175,9 @@
         <option value="$PROJECT_DIR$/features/support/paths.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/features/editing_tickets.feature" />
-        <option value="$PROJECT_DIR$/app/views/tickets/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/tickets/edit.html.erb" />
+        <option value="$PROJECT_DIR$/features/deleting_tickets.feature" />
+        <option value="$PROJECT_DIR$/app/views/tickets/show.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/tickets_controller.rb" />
       </list>
     </option>
@@ -946,13 +945,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/tickets/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="49" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/tickets/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="17" selection-start="39" selection-end="39" vertical-scroll-proportion="-1.7142857">
@@ -1030,20 +1022,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/features/editing_tickets.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="62" selection-start="907" selection-end="907" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tickets/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="126" selection-end="126" vertical-scroll-proportion="-4.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/tickets/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="0" selection-start="73" selection-end="73" vertical-scroll-proportion="0.0">
@@ -1051,9 +1029,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/features/editing_tickets.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="0" selection-start="1033" selection-end="1033" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/deleting_tickets.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="653" selection-end="653" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tickets/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="34" selection-start="66" selection-end="66" vertical-scroll-proportion="-1.7142857">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/tickets_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="0" selection-start="891" selection-end="891" vertical-scroll-proportion="0.7585089">
+        <state line="44" column="4" selection-start="1020" selection-end="1020" vertical-scroll-proportion="0.85575366">
           <folding />
         </state>
       </provider>

@@ -4664,3 +4664,682 @@ Completed 200 OK in 29ms (Views: 4.2ms | ActiveRecord: 22.3ms)
   [1m[36mProject Load (13.5ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`name` = 'Internet Explorer') LIMIT 1[0m
   [1m[35mTicket Load (0.2ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.`title` = 'Standards compliance') LIMIT 1
   [1m[36mSQL (10.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (7.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (17.7ms)[0m  describe `projects`
+  [1m[36mSQL (17.4ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-29 23:01:21', 'TextMate 2', '2010-11-29 23:01:21')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (3.8ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (13.1ms)[0m  describe `tickets`
+  [1m[36mSQL (2.3ms)[0m  [1mINSERT INTO `tickets` (`created_at`, `description`, `project_id`, `title`, `updated_at`) VALUES ('2010-11-29 23:01:21', 'Gradients! Starbursts! Oh my!', 13, 'Make it shiny!', '2010-11-29 23:01:21')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 17:01:21 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (3.8ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Rendered projects/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 20ms (Views: 15.0ms | ActiveRecord: 65.6ms)
+
+
+Started GET "/projects/13" for 127.0.0.1 at 2010-11-29 17:01:22 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mProject Load (23.0ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 13) LIMIT 1
+  [1m[36mTicket Load (12.8ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 13)[0m
+Rendered projects/show.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 48ms (Views: 10.7ms | ActiveRecord: 35.9ms)
+
+
+Started GET "/projects/13/tickets/6" for 127.0.0.1 at 2010-11-29 17:01:22 -0600
+  Processing by TicketsController#show as HTML
+  Parameters: {"project_id"=>"13", "id"=>"6"}
+  [1m[35mProject Load (1.1ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 13) LIMIT 1
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 13) AND (`tickets`.`id` = 6) LIMIT 1[0m
+Rendered tickets/show.html.erb within layouts/application (78.4ms)
+Completed 200 OK in 89ms (Views: 84.3ms | ActiveRecord: 1.3ms)
+  [1m[35mSQL (45.9ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (4.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (2.3ms)[0m  describe `projects`
+  [1m[36mSQL (10.1ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-29 23:03:51', 'TextMate 2', '2010-11-29 23:03:51')[0m
+  [1m[35mSQL (3.7ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (4.4ms)[0m  describe `tickets`
+  [1m[36mSQL (7.8ms)[0m  [1mINSERT INTO `tickets` (`created_at`, `description`, `project_id`, `title`, `updated_at`) VALUES ('2010-11-29 23:03:52', 'Gradients! Starbursts! Oh my!', 14, 'Make it shiny!', '2010-11-29 23:03:52')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 17:03:52 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (18.0ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Rendered projects/index.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 50ms (Views: 30.1ms | ActiveRecord: 51.6ms)
+
+
+Started GET "/projects/14" for 127.0.0.1 at 2010-11-29 17:03:52 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mProject Load (10.6ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 14) LIMIT 1
+  [1m[36mTicket Load (1.3ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 14)[0m
+Rendered projects/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 31ms (Views: 17.1ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/projects/14/tickets/7" for 127.0.0.1 at 2010-11-29 17:03:52 -0600
+  Processing by TicketsController#show as HTML
+  Parameters: {"project_id"=>"14", "id"=>"7"}
+  [1m[35mProject Load (3.6ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 14) LIMIT 1
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 14) AND (`tickets`.`id` = 7) LIMIT 1[0m
+Rendered tickets/show.html.erb within layouts/application (68.3ms)
+Completed 200 OK in 83ms (Views: 75.2ms | ActiveRecord: 3.8ms)
+
+
+Started DELETE "/projects/14/tickets/7" for 127.0.0.1 at 2010-11-29 17:03:53 -0600
+  [1m[35mSQL (4.1ms)[0m  ROLLBACK
+  [1m[36mSQL (4.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (7.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (6.8ms)[0m  describe `projects`
+  [1m[36mSQL (10.4ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-29 23:04:52', 'TextMate 2', '2010-11-29 23:04:52')[0m
+  [1m[35mSQL (7.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (3.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (4.5ms)[0m  describe `tickets`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `tickets` (`created_at`, `description`, `project_id`, `title`, `updated_at`) VALUES ('2010-11-29 23:04:53', 'Gradients! Starbursts! Oh my!', 15, 'Make it shiny!', '2010-11-29 23:04:53')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 17:04:53 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (3.5ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Rendered projects/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 22ms (Views: 17.4ms | ActiveRecord: 48.2ms)
+
+
+Started GET "/projects/15" for 127.0.0.1 at 2010-11-29 17:04:53 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mProject Load (7.3ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 15) LIMIT 1
+  [1m[36mTicket Load (0.5ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 15)[0m
+Rendered projects/show.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 20ms (Views: 10.8ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/projects/15/tickets/8" for 127.0.0.1 at 2010-11-29 17:04:53 -0600
+  Processing by TicketsController#show as HTML
+  Parameters: {"project_id"=>"15", "id"=>"8"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 15) LIMIT 1
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 15) AND (`tickets`.`id` = 8) LIMIT 1[0m
+Rendered tickets/show.html.erb within layouts/application (77.7ms)
+Completed 200 OK in 87ms (Views: 83.5ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/projects/15/tickets/8" for 127.0.0.1 at 2010-11-29 17:04:53 -0600
+  Processing by TicketsController#destroy as HTML
+  Parameters: {"project_id"=>"15", "id"=>"8"}
+  [1m[35mProject Load (0.5ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 15) LIMIT 1
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 15) AND (`tickets`.`id` = 8) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `tickets` WHERE (`tickets`.`id` = 8)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/projects/15
+Completed 302 Found in 7ms
+
+
+Started GET "/projects/15" for 127.0.0.1 at 2010-11-29 17:04:53 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mProject Load (5.5ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 15) LIMIT 1[0m
+  [1m[35mTicket Load (0.8ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 15)
+Rendered projects/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 13ms (Views: 5.9ms | ActiveRecord: 7.5ms)
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`name` = 'TextMate 2') LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 17:05:28 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[35mSQL (10.1ms)[0m  SHOW TABLES
+  [1m[36mProject Load (3.6ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Rendered projects/index.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 201ms (Views: 24.9ms | ActiveRecord: 13.8ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2010-11-29 17:05:28 -0600
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (25.3ms)
+Rendered projects/new.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 56ms (Views: 32.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2010-11-29 17:05:28 -0600
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>"TextMate 2"}, "commit"=>"Create Project"}
+  [1m[35mSQL (6.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.7ms)[0m  [1mdescribe `projects`[0m
+  [1m[35mSQL (3.3ms)[0m  INSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-29 23:05:28', 'TextMate 2', '2010-11-29 23:05:28')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/projects/1
+Completed 302 Found in 80ms
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2010-11-29 17:05:29 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (10.2ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 1) LIMIT 1
+  [1m[36mTicket Load (8.5ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 1)[0m
+Rendered projects/show.html.erb within layouts/application (36.7ms)
+Completed 200 OK in 52ms (Views: 31.3ms | ActiveRecord: 31.1ms)
+  [1m[35mProject Load (7.0ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`name` = 'TextMate 2') LIMIT 1
+  [1m[36mSQL (2.7ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 17:05:29 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (6.1ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Completed 200 OK in 12ms (Views: 3.5ms | ActiveRecord: 15.9ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2010-11-29 17:05:29 -0600
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (3.2ms)
+Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2010-11-29 17:05:29 -0600
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>""}, "commit"=>"Create Project"}
+  [1m[35mSQL (18.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendered projects/_form.html.erb (8.6ms)
+Completed 200 OK in 61ms (Views: 30.3ms | ActiveRecord: 18.1ms)
+  [1m[35mSQL (10.3ms)[0m  ROLLBACK
+  [1m[36mSQL (9.9ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (31.2ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-29 23:05:29', 'Internet Explorer', '2010-11-29 23:05:29')[0m
+  [1m[35mSQL (1.2ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 17:05:29 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (8.0ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Completed 200 OK in 13ms (Views: 4.4ms | ActiveRecord: 61.0ms)
+
+
+Started GET "/projects/2" for 127.0.0.1 at 2010-11-29 17:05:29 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 2) LIMIT 1
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 2)[0m
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects/2/tickets/new" for 127.0.0.1 at 2010-11-29 17:05:29 -0600
+  Processing by TicketsController#new as HTML
+  Parameters: {"project_id"=>"2"}
+  [1m[35mProject Load (6.7ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 2) LIMIT 1
+Rendered tickets/_form.html.erb (15.8ms)
+Completed 200 OK in 51ms (Views: 37.1ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/projects/2/tickets" for 127.0.0.1 at 2010-11-29 17:05:29 -0600
+  Processing by TicketsController#create as HTML
+  Parameters: {"utf8"=>"✓", "ticket"=>{"title"=>"Non-standards compliance", "description"=>"My pages are ugly!"}, "commit"=>"Create Ticket", "project_id"=>"2"}
+  [1m[36mProject Load (9.7ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 2) LIMIT 1[0m
+  [1m[35mSQL (6.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.7ms)[0m  [1mdescribe `tickets`[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `tickets` (`created_at`, `description`, `project_id`, `title`, `updated_at`) VALUES ('2010-11-29 23:05:29', 'My pages are ugly!', 2, 'Non-standards compliance', '2010-11-29 23:05:29')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/projects/2/tickets/1
+Completed 302 Found in 40ms
+
+
+Started GET "/projects/2/tickets/1" for 127.0.0.1 at 2010-11-29 17:05:29 -0600
+  Processing by TicketsController#show as HTML
+  Parameters: {"project_id"=>"2", "id"=>"1"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 2) LIMIT 1
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 2) AND (`tickets`.`id` = 1) LIMIT 1[0m
+Completed 200 OK in 214ms (Views: 70.4ms | ActiveRecord: 18.5ms)
+  [1m[35mSQL (1.4ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.8ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (10.4ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-29 23:05:29', 'Internet Explorer', '2010-11-29 23:05:29')[0m
+  [1m[35mSQL (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 17:05:29 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (12.5ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Completed 200 OK in 18ms (Views: 4.5ms | ActiveRecord: 27.4ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2010-11-29 17:05:29 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProject Load (4.4ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 3) LIMIT 1
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 3)[0m
+Completed 200 OK in 12ms (Views: 6.5ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/projects/3/tickets/new" for 127.0.0.1 at 2010-11-29 17:05:29 -0600
+  Processing by TicketsController#new as HTML
+  Parameters: {"project_id"=>"3"}
+  [1m[35mProject Load (4.5ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 3) LIMIT 1
+Rendered tickets/_form.html.erb (8.6ms)
+Completed 200 OK in 20ms (Views: 11.9ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/projects/3/tickets" for 127.0.0.1 at 2010-11-29 17:05:29 -0600
+  Processing by TicketsController#create as HTML
+  Parameters: {"utf8"=>"✓", "ticket"=>{"title"=>"", "description"=>""}, "commit"=>"Create Ticket", "project_id"=>"3"}
+  [1m[36mProject Load (7.2ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 3) LIMIT 1[0m
+  [1m[35mSQL (13.7ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (35.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendered tickets/_form.html.erb (23.4ms)
+Completed 200 OK in 99ms (Views: 26.9ms | ActiveRecord: 55.9ms)
+  [1m[35mSQL (14.4ms)[0m  ROLLBACK
+  [1m[36mSQL (11.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.4ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-29 23:05:30', 'Internet Explorer', '2010-11-29 23:05:30')[0m
+  [1m[35mSQL (1.3ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 17:05:30 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (7.6ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Completed 200 OK in 13ms (Views: 4.3ms | ActiveRecord: 37.3ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2010-11-29 17:05:30 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (8.3ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 4) LIMIT 1
+  [1m[36mTicket Load (5.7ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 4)[0m
+Completed 200 OK in 24ms (Views: 8.6ms | ActiveRecord: 14.0ms)
+
+
+Started GET "/projects/4/tickets/new" for 127.0.0.1 at 2010-11-29 17:05:30 -0600
+  Processing by TicketsController#new as HTML
+  Parameters: {"project_id"=>"4"}
+  [1m[35mProject Load (13.4ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 4) LIMIT 1
+Rendered tickets/_form.html.erb (4.7ms)
+Completed 200 OK in 23ms (Views: 7.8ms | ActiveRecord: 13.4ms)
+
+
+Started POST "/projects/4/tickets" for 127.0.0.1 at 2010-11-29 17:05:30 -0600
+  Processing by TicketsController#create as HTML
+  Parameters: {"utf8"=>"✓", "ticket"=>{"title"=>"Non-standards compliance", "description"=>"it sucks"}, "commit"=>"Create Ticket", "project_id"=>"4"}
+  [1m[36mProject Load (8.8ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 4) LIMIT 1[0m
+  [1m[35mSQL (4.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendered tickets/_form.html.erb (97.5ms)
+Completed 200 OK in 122ms (Views: 100.7ms | ActiveRecord: 13.0ms)
+  [1m[35mSQL (11.7ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (11.6ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-29 23:05:30', 'TextMate 2', '2010-11-29 23:05:30')[0m
+  [1m[35mSQL (7.6ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 17:05:30 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 31.4ms)
+
+
+Started GET "/projects/5" for 127.0.0.1 at 2010-11-29 17:05:30 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProject Load (6.9ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 5) LIMIT 1
+  [1m[36mTicket Load (0.3ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 5)[0m
+Completed 200 OK in 30ms (Views: 16.4ms | ActiveRecord: 7.3ms)
+
+
+Started DELETE "/projects/5" for 127.0.0.1 at 2010-11-29 17:05:30 -0600
+  Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProject Load (8.4ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 5) LIMIT 1
+  [1m[36mSQL (2.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `projects` WHERE (`projects`.`id` = 5)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/projects
+Completed 302 Found in 15ms
+
+
+Started GET "/projects" for 127.0.0.1 at 2010-11-29 17:05:30 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (2.2ms)[0m  SELECT `projects`.* FROM `projects`
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 13.4ms)
+  [1m[36mSQL (2.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (4.5ms)[0m  INSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-29 23:05:30', 'TextMate 2', '2010-11-29 23:05:30')
+  [1m[36mSQL (4.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO `tickets` (`created_at`, `description`, `project_id`, `title`, `updated_at`) VALUES ('2010-11-29 23:05:30', 'Gradients! Starbursts! Oh my!', 6, 'Make it shiny!', '2010-11-29 23:05:30')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 17:05:30 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (18.5ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Completed 200 OK in 24ms (Views: 4.8ms | ActiveRecord: 33.9ms)
+
+
+Started GET "/projects/6" for 127.0.0.1 at 2010-11-29 17:05:30 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mProject Load (12.1ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 6) LIMIT 1
+  [1m[36mTicket Load (5.9ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 6)[0m
+Completed 200 OK in 26ms (Views: 7.1ms | ActiveRecord: 18.1ms)
+
+
+Started GET "/projects/6/tickets/2" for 127.0.0.1 at 2010-11-29 17:05:30 -0600
+  Processing by TicketsController#show as HTML
+  Parameters: {"project_id"=>"6", "id"=>"2"}
+  [1m[35mProject Load (10.5ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 6) LIMIT 1
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 6) AND (`tickets`.`id` = 2) LIMIT 1[0m
+Completed 200 OK in 18ms (Views: 5.6ms | ActiveRecord: 10.7ms)
+
+
+Started DELETE "/projects/6/tickets/2" for 127.0.0.1 at 2010-11-29 17:05:30 -0600
+  Processing by TicketsController#destroy as HTML
+  Parameters: {"project_id"=>"6", "id"=>"2"}
+  [1m[35mProject Load (3.9ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 6) LIMIT 1
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 6) AND (`tickets`.`id` = 2) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `tickets` WHERE (`tickets`.`id` = 2)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/projects/6
+Completed 302 Found in 11ms
+
+
+Started GET "/projects/6" for 127.0.0.1 at 2010-11-29 17:05:30 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 6) LIMIT 1[0m
+  [1m[35mTicket Load (10.6ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 6)
+Completed 200 OK in 20ms (Views: 8.4ms | ActiveRecord: 15.3ms)
+  [1m[36mProject Load (3.2ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`name` = 'TextMate 2') LIMIT 1[0m
+  [1m[35mSQL (11.0ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-29 23:05:30', 'TextMate 2', '2010-11-29 23:05:30')[0m
+  [1m[35mSQL (11.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 17:05:30 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (1.1ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 28.6ms)
+
+
+Started GET "/projects/7" for 127.0.0.1 at 2010-11-29 17:05:30 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 7) LIMIT 1
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 7)[0m
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects/7/edit" for 127.0.0.1 at 2010-11-29 17:05:30 -0600
+  Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 7) LIMIT 1
+Rendered projects/_form.html.erb (5.1ms)
+Completed 200 OK in 16ms (Views: 11.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/projects/7" for 127.0.0.1 at 2010-11-29 17:05:30 -0600
+  Processing by ProjectsController#update as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>"TextMate 2 beta"}, "commit"=>"Update Project", "id"=>"7"}
+  [1m[36mProject Load (1.1ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 7) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.9ms)[0m  [1mUPDATE `projects` SET `name` = 'TextMate 2 beta', `updated_at` = '2010-11-29 23:05:30' WHERE (`projects`.`id` = 7)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/projects/7
+Completed 302 Found in 12ms
+
+
+Started GET "/projects/7" for 127.0.0.1 at 2010-11-29 17:05:30 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProject Load (1.3ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 7) LIMIT 1[0m
+  [1m[35mTicket Load (10.0ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 7)
+Completed 200 OK in 20ms (Views: 8.2ms | ActiveRecord: 17.4ms)
+  [1m[36mProject Load (2.0ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`name` = 'TextMate 2 beta') LIMIT 1[0m
+  [1m[35mSQL (46.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.1ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-29 23:05:30', 'TextMate 2', '2010-11-29 23:05:30')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 17:05:31 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (2.5ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Completed 200 OK in 14ms (Views: 8.5ms | ActiveRecord: 55.1ms)
+
+
+Started GET "/projects/8" for 127.0.0.1 at 2010-11-29 17:05:31 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mProject Load (2.0ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 8) LIMIT 1
+  [1m[36mTicket Load (0.3ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 8)[0m
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/projects/8/edit" for 127.0.0.1 at 2010-11-29 17:05:31 -0600
+  Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mProject Load (7.4ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 8) LIMIT 1
+Rendered projects/_form.html.erb (3.9ms)
+Completed 200 OK in 17ms (Views: 7.2ms | ActiveRecord: 7.4ms)
+
+
+Started POST "/projects/8" for 127.0.0.1 at 2010-11-29 17:05:31 -0600
+  Processing by ProjectsController#update as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>""}, "commit"=>"Update Project", "id"=>"8"}
+  [1m[36mProject Load (10.1ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 8) LIMIT 1[0m
+  [1m[35mSQL (14.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.6ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendered projects/_form.html.erb (8.6ms)
+Completed 200 OK in 46ms (Views: 15.0ms | ActiveRecord: 25.7ms)
+  [1m[35mSQL (3.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.4ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-29 23:05:31', 'TextMate 2', '2010-11-29 23:05:31')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `tickets` (`created_at`, `description`, `project_id`, `title`, `updated_at`) VALUES ('2010-11-29 23:05:31', 'Gradients! Starbursts! Oh my!', 9, 'Make it shiny!', '2010-11-29 23:05:31')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 17:05:31 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (7.6ms)[0m  SELECT `projects`.* FROM `projects`
+Completed 200 OK in 13ms (Views: 4.7ms | ActiveRecord: 15.9ms)
+
+
+Started GET "/projects/9" for 127.0.0.1 at 2010-11-29 17:05:31 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mProject Load (9.5ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 9) LIMIT 1[0m
+  [1m[35mTicket Load (0.2ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 9)
+Completed 200 OK in 18ms (Views: 6.7ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/projects/9/tickets/3" for 127.0.0.1 at 2010-11-29 17:05:31 -0600
+  Processing by TicketsController#show as HTML
+  Parameters: {"project_id"=>"9", "id"=>"3"}
+  [1m[36mProject Load (5.2ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 9) LIMIT 1[0m
+  [1m[35mTicket Load (0.2ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 9) AND (`tickets`.`id` = 3) LIMIT 1
+Completed 200 OK in 16ms (Views: 7.8ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/projects/9/tickets/3/edit" for 127.0.0.1 at 2010-11-29 17:05:31 -0600
+  Processing by TicketsController#edit as HTML
+  Parameters: {"project_id"=>"9", "id"=>"3"}
+  [1m[36mProject Load (2.0ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 9) LIMIT 1[0m
+  [1m[35mTicket Load (0.2ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 9) AND (`tickets`.`id` = 3) LIMIT 1
+Rendered tickets/_form.html.erb (15.4ms)
+Completed 200 OK in 38ms (Views: 32.7ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/projects/9/tickets/3" for 127.0.0.1 at 2010-11-29 17:05:31 -0600
+  Processing by TicketsController#update as HTML
+  Parameters: {"utf8"=>"✓", "ticket"=>{"title"=>"Make it really shiny!", "description"=>"Gradients! Starbursts! Oh my!"}, "commit"=>"Update Ticket", "project_id"=>"9", "id"=>"3"}
+  [1m[36mProject Load (20.4ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 9) LIMIT 1[0m
+  [1m[35mTicket Load (1.3ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 9) AND (`tickets`.`id` = 3) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (6.3ms)[0m  UPDATE `tickets` SET `title` = 'Make it really shiny!', `updated_at` = '2010-11-29 23:05:31' WHERE (`tickets`.`id` = 3)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/projects/9/tickets/3
+Completed 302 Found in 36ms
+
+
+Started GET "/projects/9/tickets/3" for 127.0.0.1 at 2010-11-29 17:05:31 -0600
+  Processing by TicketsController#show as HTML
+  Parameters: {"project_id"=>"9", "id"=>"3"}
+  [1m[35mProject Load (15.8ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 9) LIMIT 1
+  [1m[36mTicket Load (0.3ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 9) AND (`tickets`.`id` = 3) LIMIT 1[0m
+Completed 200 OK in 25ms (Views: 6.4ms | ActiveRecord: 44.2ms)
+  [1m[35mProject Load (10.1ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`name` = 'TextMate 2') LIMIT 1
+  [1m[36mTicket Load (3.1ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.`title` = 'Make it really shiny!') LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (7.6ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (6.3ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-29 23:05:31', 'TextMate 2', '2010-11-29 23:05:31')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (11.7ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (8.4ms)[0m  INSERT INTO `tickets` (`created_at`, `description`, `project_id`, `title`, `updated_at`) VALUES ('2010-11-29 23:05:31', 'Gradients! Starbursts! Oh my!', 10, 'Make it shiny!', '2010-11-29 23:05:31')
+  [1m[36mSQL (0.8ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 17:05:31 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (9.3ms)[0m  SELECT `projects`.* FROM `projects`
+Completed 200 OK in 23ms (Views: 12.5ms | ActiveRecord: 58.4ms)
+
+
+Started GET "/projects/10" for 127.0.0.1 at 2010-11-29 17:05:31 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mProject Load (18.2ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 10) LIMIT 1[0m
+  [1m[35mTicket Load (2.4ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 10)
+Completed 200 OK in 138ms (Views: 115.2ms | ActiveRecord: 20.5ms)
+
+
+Started GET "/projects/10/tickets/4" for 127.0.0.1 at 2010-11-29 17:05:31 -0600
+  Processing by TicketsController#show as HTML
+  Parameters: {"project_id"=>"10", "id"=>"4"}
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 10) LIMIT 1[0m
+  [1m[35mTicket Load (0.2ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 10) AND (`tickets`.`id` = 4) LIMIT 1
+Completed 200 OK in 9ms (Views: 5.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/projects/10/tickets/4/edit" for 127.0.0.1 at 2010-11-29 17:05:31 -0600
+  Processing by TicketsController#edit as HTML
+  Parameters: {"project_id"=>"10", "id"=>"4"}
+  [1m[36mProject Load (4.8ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 10) LIMIT 1[0m
+  [1m[35mTicket Load (0.2ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 10) AND (`tickets`.`id` = 4) LIMIT 1
+Rendered tickets/_form.html.erb (6.3ms)
+Completed 200 OK in 19ms (Views: 11.6ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/projects/10/tickets/4" for 127.0.0.1 at 2010-11-29 17:05:31 -0600
+  Processing by TicketsController#update as HTML
+  Parameters: {"utf8"=>"✓", "ticket"=>{"title"=>"", "description"=>"Gradients! Starbursts! Oh my!"}, "commit"=>"Update Ticket", "project_id"=>"10", "id"=>"4"}
+  [1m[36mProject Load (6.5ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 10) LIMIT 1[0m
+  [1m[35mTicket Load (0.2ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 10) AND (`tickets`.`id` = 4) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (9.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Rendered tickets/_form.html.erb (13.3ms)
+Completed 200 OK in 42ms (Views: 19.3ms | ActiveRecord: 15.8ms)
+  [1m[36mSQL (3.0ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-29 23:05:31', 'TextMate 2', '2010-11-29 23:05:31')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 17:05:31 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (14.3ms)[0m  SELECT `projects`.* FROM `projects`
+Completed 200 OK in 20ms (Views: 4.7ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/projects/11" for 127.0.0.1 at 2010-11-29 17:05:31 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mProject Load (5.1ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 11) LIMIT 1[0m
+  [1m[35mTicket Load (9.0ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 11)
+Completed 200 OK in 25ms (Views: 9.8ms | ActiveRecord: 14.1ms)
+  [1m[36mProject Load (11.8ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`name` = 'TextMate 2') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-29 23:05:31', 'TextMate 2', '2010-11-29 23:05:31')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `tickets` (`created_at`, `description`, `project_id`, `title`, `updated_at`) VALUES ('2010-11-29 23:05:31', 'Gradients! Starbursts! Oh my!', 12, 'Make it shiny!', '2010-11-29 23:05:31')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-29 23:05:31', 'Internet Explorer', '2010-11-29 23:05:31')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (5.7ms)[0m  INSERT INTO `tickets` (`created_at`, `description`, `project_id`, `title`, `updated_at`) VALUES ('2010-11-29 23:05:31', 'Isn\'t a joke.', 13, 'Standards compliance', '2010-11-29 23:05:31')
+  [1m[36mSQL (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 17:05:31 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (6.2ms)[0m  SELECT `projects`.* FROM `projects`
+Completed 200 OK in 16ms (Views: 6.7ms | ActiveRecord: 25.8ms)
+
+
+Started GET "/projects/12" for 127.0.0.1 at 2010-11-29 17:05:32 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mProject Load (13.2ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 12) LIMIT 1[0m
+  [1m[35mTicket Load (10.7ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 12)
+Completed 200 OK in 36ms (Views: 11.4ms | ActiveRecord: 23.9ms)
+
+
+Started GET "/projects/12/tickets/5" for 127.0.0.1 at 2010-11-29 17:05:32 -0600
+  Processing by TicketsController#show as HTML
+  Parameters: {"project_id"=>"12", "id"=>"5"}
+  [1m[36mProject Load (7.4ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 12) LIMIT 1[0m
+  [1m[35mTicket Load (4.8ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 12) AND (`tickets`.`id` = 5) LIMIT 1
+Completed 200 OK in 22ms (Views: 7.2ms | ActiveRecord: 12.2ms)
+  [1m[36mProject Load (2.1ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`name` = 'TextMate 2') LIMIT 1[0m
+  [1m[35mTicket Load (0.2ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.`title` = 'Make it shiny!') LIMIT 1
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 17:05:32 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (11.9ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Completed 200 OK in 18ms (Views: 4.9ms | ActiveRecord: 14.3ms)
+
+
+Started GET "/projects/13" for 127.0.0.1 at 2010-11-29 17:05:32 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mProject Load (11.3ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 13) LIMIT 1
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 13)[0m
+Completed 200 OK in 20ms (Views: 6.8ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/projects/13/tickets/6" for 127.0.0.1 at 2010-11-29 17:05:32 -0600
+  Processing by TicketsController#show as HTML
+  Parameters: {"project_id"=>"13", "id"=>"6"}
+  [1m[35mProject Load (3.6ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 13) LIMIT 1
+  [1m[36mTicket Load (18.9ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 13) AND (`tickets`.`id` = 6) LIMIT 1[0m
+Completed 200 OK in 33ms (Views: 5.7ms | ActiveRecord: 22.6ms)
+  [1m[35mProject Load (10.8ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`name` = 'Internet Explorer') LIMIT 1
+  [1m[36mTicket Load (9.0ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.`title` = 'Standards compliance') LIMIT 1[0m
+  [1m[35mSQL (6.2ms)[0m  ROLLBACK

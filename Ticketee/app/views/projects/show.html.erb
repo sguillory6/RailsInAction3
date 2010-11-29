@@ -3,3 +3,7 @@
 <h2><%= @project.name %></h2>
 
 <%= link_to "Edit", edit_project_path(@project) %>
+<%= link_to "Delete", @project, :method => :delete, :confirm => "Are you sure?" %>
+<%= link_to "New Ticket", new_project_ticket_path(@project) %>
+
+

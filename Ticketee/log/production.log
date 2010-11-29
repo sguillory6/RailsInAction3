@@ -1,0 +1,34 @@
+
+
+Started GET "/projects/not_here" for 127.0.0.1 at 2010-11-28 16:25:34 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"not_here"}
+Completed   in 151ms
+
+ActiveRecord::RecordNotFound (Couldn't find Project with ID=not_here):
+  app/controllers/projects_controller.rb:24:in `show'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.4ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.4ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.3ms)
+
+
+Started GET "/projects/not_here" for 127.0.0.1 at 2010-11-28 16:25:44 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"not_here"}
+Completed   in 13ms
+
+ActiveRecord::RecordNotFound (Couldn't find Project with ID=not_here):
+  app/controllers/projects_controller.rb:24:in `show'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (13.2ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.2ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2010-11-28 16:25:44 -0600
+
+ActionController::RoutingError (No route matches "/favicon.ico"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)

@@ -6173,3 +6173,1047 @@ Completed 200 OK in 18ms (Views: 7.0ms | ActiveRecord: 8.8ms)
   [1m[36mProject Load (1.8ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`name` = 'Internet Explorer') LIMIT 1[0m
   [1m[35mTicket Load (0.3ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.`title` = 'Standards compliance') LIMIT 1
   [1m[36mSQL (10.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (6.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (10.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('user@ticketee.com')) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`confirmation_token` = 'PPu2ZxQk25M_8IqM5U_o') LIMIT 1[0m
+  [1m[35mSQL (7.0ms)[0m  describe `users`
+  [1m[36mSQL (10.1ms)[0m  [1mINSERT INTO `users` (`confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `password_salt`, `remember_created_at`, `remember_token`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES ('2010-11-30 00:57:37', 'PPu2ZxQk25M_8IqM5U_o', NULL, '2010-11-30 00:57:37', NULL, NULL, 'user@ticketee.com', '$2a$10$Ff7HeKL7D/QRExInu6bbW.oV0o.CcTlzYjdlPG2/4EmzD5R4OilOi', NULL, NULL, '$2a$10$Ff7HeKL7D/QRExInu6bbW.', NULL, NULL, NULL, 0, '2010-11-30 00:57:37')[0m
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.1.5/app/views/devise/mailer/confirmation_instructions.html.erb (2.0ms)
+
+Sent mail to user@ticketee.com (168ms)
+Date: Mon, 29 Nov 2010 18:57:38 -0600
+From: please-change-me@config-initializers-devise.com
+To: user@ticketee.com
+Message-ID: <4cf44c02c8ac_62ae80443b3c295d8@Stanford-Guillorys-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome user@ticketee.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=PPu2ZxQk25M_8IqM5U_o">Confirm my account</a></p>
+  [1m[35mSQL (2.7ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/users/confirmation?confirmation_token=PPu2ZxQk25M_8IqM5U_o" for 127.0.0.1 at 2010-11-29 18:57:38 -0600
+  Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"PPu2ZxQk25M_8IqM5U_o"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`confirmation_token` = 'PPu2ZxQk25M_8IqM5U_o') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `users` SET `confirmation_token` = NULL, `confirmed_at` = '2010-11-30 00:57:38', `updated_at` = '2010-11-30 00:57:38' WHERE (`users`.`id` = 3)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.9ms)[0m  UPDATE `users` SET `current_sign_in_at` = '2010-11-30 00:57:38', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_at` = '2010-11-30 00:57:38', `last_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2010-11-30 00:57:38' WHERE (`users`.`id` = 3)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 13ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 18:57:38 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (8.7ms)[0m  SELECT `projects`.* FROM `projects`
+  [1m[36mUser Load (8.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendered projects/index.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 46ms (Views: 20.4ms | ActiveRecord: 58.4ms)
+  [1m[35mSQL (12.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (5.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('user@ticketee.com')) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`confirmation_token` = 'I5xO0O7S1-tE6DH1et2k') LIMIT 1
+  [1m[36mSQL (4.9ms)[0m  [1mINSERT INTO `users` (`confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `password_salt`, `remember_created_at`, `remember_token`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES ('2010-11-30 00:57:39', 'I5xO0O7S1-tE6DH1et2k', NULL, '2010-11-30 00:57:39', NULL, NULL, 'user@ticketee.com', '$2a$10$c1ZdR9FjDueUXbixhEa5jemHn6v7FWdDPYjT3FNJXQXi5OfYIUvAm', NULL, NULL, '$2a$10$c1ZdR9FjDueUXbixhEa5je', NULL, NULL, NULL, 0, '2010-11-30 00:57:39')[0m
+
+Sent mail to user@ticketee.com (17ms)
+Date: Mon, 29 Nov 2010 18:57:39 -0600
+From: please-change-me@config-initializers-devise.com
+To: user@ticketee.com
+Message-ID: <4cf44c0319b66_62ae80443b3c296ec@Stanford-Guillorys-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome user@ticketee.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=I5xO0O7S1-tE6DH1et2k">Confirm my account</a></p>
+  [1m[35mSQL (0.8ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (7.8ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.9ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mUser Load (10.4ms)[0m  SELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('user@ticketee.com')) LIMIT 1
+  [1m[36mUser Load (8.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`confirmation_token` = 'h6nPNDRjXuvhuE6Nkflm') LIMIT 1[0m
+  [1m[35mSQL (6.9ms)[0m  describe `users`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `password_salt`, `remember_created_at`, `remember_token`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES ('2010-11-30 01:00:56', 'h6nPNDRjXuvhuE6Nkflm', NULL, '2010-11-30 01:00:56', NULL, NULL, 'user@ticketee.com', '$2a$10$PpMyamuZ3m55wM3iGsk8S.xWEBv2.Vi2Ad1xWPZkmz4Qt.8NHpXyi', NULL, NULL, '$2a$10$PpMyamuZ3m55wM3iGsk8S.', NULL, NULL, NULL, 0, '2010-11-30 01:00:56')[0m
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.1.5/app/views/devise/mailer/confirmation_instructions.html.erb (5.4ms)
+
+Sent mail to user@ticketee.com (169ms)
+Date: Mon, 29 Nov 2010 19:00:57 -0600
+From: please-change-me@config-initializers-devise.com
+To: user@ticketee.com
+Message-ID: <4cf44cc923056_62d980443b3c386e8@Stanford-Guillorys-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome user@ticketee.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=h6nPNDRjXuvhuE6Nkflm">Confirm my account</a></p>
+  [1m[35mSQL (12.7ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/users/confirmation?confirmation_token=h6nPNDRjXuvhuE6Nkflm" for 127.0.0.1 at 2010-11-29 19:00:57 -0600
+  Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"h6nPNDRjXuvhuE6Nkflm"}
+  [1m[36mUser Load (14.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`confirmation_token` = 'h6nPNDRjXuvhuE6Nkflm') LIMIT 1[0m
+  [1m[35mSQL (1.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `confirmation_token` = NULL, `confirmed_at` = '2010-11-30 01:00:57', `updated_at` = '2010-11-30 01:00:57' WHERE (`users`.`id` = 5)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (13.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE `users` SET `current_sign_in_at` = '2010-11-30 01:00:57', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_at` = '2010-11-30 01:00:57', `last_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2010-11-30 01:00:57' WHERE (`users`.`id` = 5)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 41ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 19:00:57 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (0.3ms)[0m  SELECT `projects`.* FROM `projects`
+  [1m[36mUser Load (9.8ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 5) LIMIT 1[0m
+Rendered projects/index.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 36ms (Views: 17.2ms | ActiveRecord: 82.5ms)
+  [1m[35mSQL (3.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('user@ticketee.com')) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`confirmation_token` = 'KHGSN6ClaE3Xnx4aW-Wu') LIMIT 1
+  [1m[36mSQL (10.1ms)[0m  [1mINSERT INTO `users` (`confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `password_salt`, `remember_created_at`, `remember_token`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES ('2010-11-30 01:00:58', 'KHGSN6ClaE3Xnx4aW-Wu', NULL, '2010-11-30 01:00:58', NULL, NULL, 'user@ticketee.com', '$2a$10$nlg2T2iUB7GerYI5Ev.WGOmBmE4MhnO4cizY1gviIvdtIOr4tWnh2', NULL, NULL, '$2a$10$nlg2T2iUB7GerYI5Ev.WGO', NULL, NULL, NULL, 0, '2010-11-30 01:00:58')[0m
+
+Sent mail to user@ticketee.com (15ms)
+Date: Mon, 29 Nov 2010 19:00:58 -0600
+From: please-change-me@config-initializers-devise.com
+To: user@ticketee.com
+Message-ID: <4cf44cca258e1_62d980443b3c38790@Stanford-Guillorys-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome user@ticketee.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=KHGSN6ClaE3Xnx4aW-Wu">Confirm my account</a></p>
+  [1m[35mSQL (1.8ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`email` = 'user@ticketee.com') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.6ms)[0m  [1mUPDATE `users` SET `confirmation_token` = NULL, `confirmed_at` = '2010-11-30 01:00:58', `updated_at` = '2010-11-30 01:00:58' WHERE (`users`.`id` = 6)[0m
+  [1m[35mSQL (4.2ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 19:00:58 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 27.1ms)
+  [1m[35mSQL (11.8ms)[0m  ROLLBACK
+  [1m[36mSQL (1.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (13.8ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (7.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('user@ticketee.com')) LIMIT 1
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`confirmation_token` = '0UlKCju8EpS7LkPJdj2z') LIMIT 1[0m
+  [1m[35mSQL (11.5ms)[0m  describe `users`
+  [1m[36mSQL (11.8ms)[0m  [1mINSERT INTO `users` (`confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `password_salt`, `remember_created_at`, `remember_token`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES ('2010-11-30 01:02:48', '0UlKCju8EpS7LkPJdj2z', NULL, '2010-11-30 01:02:48', NULL, NULL, 'user@ticketee.com', '$2a$10$hybj0R8o.zzPMLdlAUtsjuCHWoWlMaoza9qRwiACIAsl7kl0aepPG', NULL, NULL, '$2a$10$hybj0R8o.zzPMLdlAUtsju', NULL, NULL, NULL, 0, '2010-11-30 01:02:48')[0m
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.1.5/app/views/devise/mailer/confirmation_instructions.html.erb (1.7ms)
+
+Sent mail to user@ticketee.com (186ms)
+Date: Mon, 29 Nov 2010 19:02:48 -0600
+From: please-change-me@config-initializers-devise.com
+To: user@ticketee.com
+Message-ID: <4cf44d389ce06_62f780443b3c134a1@Stanford-Guillorys-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome user@ticketee.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=0UlKCju8EpS7LkPJdj2z">Confirm my account</a></p>
+  [1m[35mSQL (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/users/confirmation?confirmation_token=0UlKCju8EpS7LkPJdj2z" for 127.0.0.1 at 2010-11-29 19:02:48 -0600
+  Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"0UlKCju8EpS7LkPJdj2z"}
+  [1m[36mUser Load (9.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`confirmation_token` = '0UlKCju8EpS7LkPJdj2z') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `confirmation_token` = NULL, `confirmed_at` = '2010-11-30 01:02:48', `updated_at` = '2010-11-30 01:02:48' WHERE (`users`.`id` = 7)[0m
+  [1m[35mSQL (1.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `users` SET `current_sign_in_at` = '2010-11-30 01:02:48', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_at` = '2010-11-30 01:02:48', `last_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2010-11-30 01:02:48' WHERE (`users`.`id` = 7)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 25ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 19:02:48 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (15.2ms)[0m  SELECT `projects`.* FROM `projects`
+  [1m[36mUser Load (10.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 7) LIMIT 1[0m
+Rendered projects/index.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 55ms (Views: 20.6ms | ActiveRecord: 84.3ms)
+  [1m[35mSQL (24.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.9ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('user@ticketee.com')) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`confirmation_token` = 'Vu77a-kjH2j5eH9k3g8F') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `users` (`confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `password_salt`, `remember_created_at`, `remember_token`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES ('2010-11-30 01:02:49', 'Vu77a-kjH2j5eH9k3g8F', NULL, '2010-11-30 01:02:49', NULL, NULL, 'user@ticketee.com', '$2a$10$7Deb4D8ioN8FeA0U8D5UQ.wL4Hz/nvHqELKbhxBt7sGEx/js3oKrO', NULL, NULL, '$2a$10$7Deb4D8ioN8FeA0U8D5UQ.', NULL, NULL, NULL, 0, '2010-11-30 01:02:49')[0m
+
+Sent mail to user@ticketee.com (12ms)
+Date: Mon, 29 Nov 2010 19:02:49 -0600
+From: please-change-me@config-initializers-devise.com
+To: user@ticketee.com
+Message-ID: <4cf44d39ab906_62f780443b3c13572@Stanford-Guillorys-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome user@ticketee.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=Vu77a-kjH2j5eH9k3g8F">Confirm my account</a></p>
+  [1m[35mSQL (5.9ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`email` = 'user@ticketee.com') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mUPDATE `users` SET `confirmation_token` = NULL, `confirmed_at` = '2010-11-30 01:02:49', `updated_at` = '2010-11-30 01:02:49' WHERE (`users`.`id` = 8)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 19:02:49 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (2.1ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Completed 200 OK in 9ms (Views: 5.8ms | ActiveRecord: 37.3ms)
+  [1m[35mSQL (1.7ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (10.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (11.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('user@ticketee.com')) LIMIT 1
+  [1m[36mUser Load (4.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`confirmation_token` = 'lSHfecUd6Wh5fV4ko57v') LIMIT 1[0m
+  [1m[35mSQL (20.5ms)[0m  describe `users`
+  [1m[36mSQL (3.8ms)[0m  [1mINSERT INTO `users` (`confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `password_salt`, `remember_created_at`, `remember_token`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES ('2010-11-30 01:04:19', 'lSHfecUd6Wh5fV4ko57v', NULL, '2010-11-30 01:04:19', NULL, NULL, 'user@ticketee.com', '$2a$10$dupLFyLi0i6vxKPhPMp9XegdEx3bNdMn20lAb4QiJDWF3kxdR87yC', NULL, NULL, '$2a$10$dupLFyLi0i6vxKPhPMp9Xe', NULL, NULL, NULL, 0, '2010-11-30 01:04:19')[0m
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.1.5/app/views/devise/mailer/confirmation_instructions.html.erb (1.7ms)
+
+Sent mail to user@ticketee.com (187ms)
+Date: Mon, 29 Nov 2010 19:04:20 -0600
+From: please-change-me@config-initializers-devise.com
+To: user@ticketee.com
+Message-ID: <4cf44d941ad8e_630b80443b3c49569@Stanford-Guillorys-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome user@ticketee.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=lSHfecUd6Wh5fV4ko57v">Confirm my account</a></p>
+  [1m[35mSQL (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/users/confirmation?confirmation_token=lSHfecUd6Wh5fV4ko57v" for 127.0.0.1 at 2010-11-29 19:04:20 -0600
+  Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"lSHfecUd6Wh5fV4ko57v"}
+  [1m[36mUser Load (5.9ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`confirmation_token` = 'lSHfecUd6Wh5fV4ko57v') LIMIT 1[0m
+  [1m[35mSQL (18.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `confirmation_token` = NULL, `confirmed_at` = '2010-11-30 01:04:20', `updated_at` = '2010-11-30 01:04:20' WHERE (`users`.`id` = 9)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE `users` SET `current_sign_in_at` = '2010-11-30 01:04:20', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_at` = '2010-11-30 01:04:20', `last_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2010-11-30 01:04:20' WHERE (`users`.`id` = 9)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 34ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 19:04:20 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (15.5ms)[0m  SELECT `projects`.* FROM `projects`
+  [1m[36mUser Load (18.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 9) LIMIT 1[0m
+Rendered projects/index.html.erb within layouts/application (26.7ms)
+Completed 200 OK in 61ms (Views: 17.1ms | ActiveRecord: 110.5ms)
+  [1m[35mSQL (9.8ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (11.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Load (7.3ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('user@ticketee.com')) LIMIT 1[0m
+  [1m[35mUser Load (6.7ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`confirmation_token` = 'JMnBz1y_lJ4q4fjnfmDf') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `users` (`confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `password_salt`, `remember_created_at`, `remember_token`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES ('2010-11-30 01:04:21', 'JMnBz1y_lJ4q4fjnfmDf', NULL, '2010-11-30 01:04:21', NULL, NULL, 'user@ticketee.com', '$2a$10$FPW..uop5x00zAKuCXg9cuVUd0GeGTh1NKTEOnRT4QSZrhcsGsfrG', NULL, NULL, '$2a$10$FPW..uop5x00zAKuCXg9cu', NULL, NULL, NULL, 0, '2010-11-30 01:04:21')[0m
+
+Sent mail to user@ticketee.com (14ms)
+Date: Mon, 29 Nov 2010 19:04:21 -0600
+From: please-change-me@config-initializers-devise.com
+To: user@ticketee.com
+Message-ID: <4cf44d9532c64_630b80443b3c4965a@Stanford-Guillorys-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome user@ticketee.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=JMnBz1y_lJ4q4fjnfmDf">Confirm my account</a></p>
+  [1m[35mSQL (1.6ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`email` = 'user@ticketee.com') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `users` SET `confirmation_token` = NULL, `confirmed_at` = '2010-11-30 01:04:21', `updated_at` = '2010-11-30 01:04:21' WHERE (`users`.`id` = 10)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 19:04:21 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (6.9ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Completed 200 OK in 13ms (Views: 5.3ms | ActiveRecord: 44.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-29 19:04:21 -0600
+  Processing by Devise::SessionsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.1.5/app/views/devise/shared/_links.erb (3.2ms)
+Completed 200 OK in 38ms (Views: 37.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-29 19:04:21 -0600
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"user@ticketee.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (14.9ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`email` = 'user@ticketee.com') LIMIT 1
+  [1m[36mSQL (19.8ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (6.8ms)[0m  UPDATE `users` SET `current_sign_in_at` = '2010-11-30 01:04:21', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_at` = '2010-11-30 01:04:21', `last_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2010-11-30 01:04:21' WHERE (`users`.`id` = 10)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 329ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 19:04:21 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (4.4ms)[0m  SELECT `projects`.* FROM `projects`
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 10) LIMIT 1[0m
+Completed 200 OK in 11ms (Views: 4.5ms | ActiveRecord: 47.5ms)
+  [1m[35mSQL (26.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 19:05:00 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Rendered projects/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 182ms (Views: 20.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2010-11-29 19:05:01 -0600
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (12.9ms)
+Rendered projects/new.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 30ms (Views: 22.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2010-11-29 19:05:01 -0600
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>"TextMate 2"}, "commit"=>"Create Project"}
+  [1m[35mSQL (1.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (15.9ms)[0m  [1mdescribe `projects`[0m
+  [1m[35mSQL (11.9ms)[0m  INSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-30 01:05:01', 'TextMate 2', '2010-11-30 01:05:01')
+  [1m[36mSQL (5.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/projects/1
+Completed 302 Found in 122ms
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2010-11-29 19:05:01 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (4.8ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 1) LIMIT 1
+  [1m[36mTicket Load (7.4ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 1)[0m
+Rendered projects/show.html.erb within layouts/application (45.0ms)
+Completed 200 OK in 57ms (Views: 42.7ms | ActiveRecord: 46.4ms)
+  [1m[35mProject Load (1.8ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`name` = 'TextMate 2') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (2.4ms)[0m  BEGIN
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 19:05:01 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (1.8ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Completed 200 OK in 17ms (Views: 10.5ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2010-11-29 19:05:01 -0600
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (3.6ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2010-11-29 19:05:01 -0600
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>""}, "commit"=>"Create Project"}
+  [1m[35mSQL (5.6ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendered projects/_form.html.erb (14.3ms)
+Completed 200 OK in 32ms (Views: 18.2ms | ActiveRecord: 5.7ms)
+  [1m[35mSQL (13.3ms)[0m  ROLLBACK
+  [1m[36mSQL (9.7ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-30 01:05:01', 'Internet Explorer', '2010-11-30 01:05:01')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 19:05:01 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 24.1ms)
+
+
+Started GET "/projects/2" for 127.0.0.1 at 2010-11-29 19:05:01 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mProject Load (2.6ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 2) LIMIT 1
+  [1m[36mTicket Load (0.3ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 2)[0m
+Completed 200 OK in 14ms (Views: 9.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/projects/2/tickets/new" for 127.0.0.1 at 2010-11-29 19:05:01 -0600
+  Processing by TicketsController#new as HTML
+  Parameters: {"project_id"=>"2"}
+  [1m[35mProject Load (2.0ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 2) LIMIT 1
+Rendered tickets/_form.html.erb (15.8ms)
+Completed 200 OK in 43ms (Views: 34.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/projects/2/tickets" for 127.0.0.1 at 2010-11-29 19:05:01 -0600
+  Processing by TicketsController#create as HTML
+  Parameters: {"utf8"=>"✓", "ticket"=>{"title"=>"Non-standards compliance", "description"=>"My pages are ugly!"}, "commit"=>"Create Ticket", "project_id"=>"2"}
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 2) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.1ms)[0m  [1mdescribe `tickets`[0m
+  [1m[35mSQL (13.6ms)[0m  INSERT INTO `tickets` (`created_at`, `description`, `project_id`, `title`, `updated_at`) VALUES ('2010-11-30 01:05:01', 'My pages are ugly!', 2, 'Non-standards compliance', '2010-11-30 01:05:01')
+  [1m[36mSQL (15.8ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/projects/2/tickets/1
+Completed 302 Found in 53ms
+
+
+Started GET "/projects/2/tickets/1" for 127.0.0.1 at 2010-11-29 19:05:01 -0600
+  Processing by TicketsController#show as HTML
+  Parameters: {"project_id"=>"2", "id"=>"1"}
+  [1m[35mProject Load (1.1ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 2) LIMIT 1
+  [1m[36mTicket Load (0.3ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 2) AND (`tickets`.`id` = 1) LIMIT 1[0m
+Completed 200 OK in 102ms (Views: 97.1ms | ActiveRecord: 33.3ms)
+  [1m[35mSQL (5.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (6.9ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-30 01:05:01', 'Internet Explorer', '2010-11-30 01:05:01')[0m
+  [1m[35mSQL (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 19:05:01 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (5.1ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Completed 200 OK in 12ms (Views: 6.3ms | ActiveRecord: 18.0ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2010-11-29 19:05:02 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 3) LIMIT 1
+  [1m[36mTicket Load (2.6ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 3)[0m
+Completed 200 OK in 15ms (Views: 10.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/projects/3/tickets/new" for 127.0.0.1 at 2010-11-29 19:05:02 -0600
+  Processing by TicketsController#new as HTML
+  Parameters: {"project_id"=>"3"}
+  [1m[35mProject Load (4.0ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 3) LIMIT 1
+Rendered tickets/_form.html.erb (4.9ms)
+Completed 200 OK in 22ms (Views: 16.1ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/projects/3/tickets" for 127.0.0.1 at 2010-11-29 19:05:02 -0600
+  Processing by TicketsController#create as HTML
+  Parameters: {"utf8"=>"✓", "ticket"=>{"title"=>"", "description"=>""}, "commit"=>"Create Ticket", "project_id"=>"3"}
+  [1m[36mProject Load (11.0ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 3) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (5.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendered tickets/_form.html.erb (112.9ms)
+Completed 200 OK in 151ms (Views: 117.6ms | ActiveRecord: 16.4ms)
+  [1m[35mSQL (12.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-30 01:05:02', 'Internet Explorer', '2010-11-30 01:05:02')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 19:05:02 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (1.3ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 14.8ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2010-11-29 19:05:02 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (18.3ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 4) LIMIT 1
+  [1m[36mTicket Load (0.3ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 4)[0m
+Completed 200 OK in 35ms (Views: 15.0ms | ActiveRecord: 18.6ms)
+
+
+Started GET "/projects/4/tickets/new" for 127.0.0.1 at 2010-11-29 19:05:02 -0600
+  Processing by TicketsController#new as HTML
+  Parameters: {"project_id"=>"4"}
+  [1m[35mProject Load (5.0ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 4) LIMIT 1
+Rendered tickets/_form.html.erb (7.4ms)
+Completed 200 OK in 18ms (Views: 11.8ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/projects/4/tickets" for 127.0.0.1 at 2010-11-29 19:05:02 -0600
+  Processing by TicketsController#create as HTML
+  Parameters: {"utf8"=>"✓", "ticket"=>{"title"=>"Non-standards compliance", "description"=>"it sucks"}, "commit"=>"Create Ticket", "project_id"=>"4"}
+  [1m[36mProject Load (4.8ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 4) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendered tickets/_form.html.erb (8.0ms)
+Completed 200 OK in 30ms (Views: 19.9ms | ActiveRecord: 5.0ms)
+  [1m[35mSQL (13.7ms)[0m  ROLLBACK
+  [1m[36mSQL (2.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-30 01:05:02', 'TextMate 2', '2010-11-30 01:05:02')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 19:05:02 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 16.7ms)
+
+
+Started GET "/projects/5" for 127.0.0.1 at 2010-11-29 19:05:02 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 5) LIMIT 1
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 5)[0m
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/projects/5" for 127.0.0.1 at 2010-11-29 19:05:02 -0600
+  Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProject Load (1.3ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 5) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `projects` WHERE (`projects`.`id` = 5)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/projects
+Completed 302 Found in 5ms
+
+
+Started GET "/projects" for 127.0.0.1 at 2010-11-29 19:05:02 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (2.4ms)[0m  SELECT `projects`.* FROM `projects`
+Completed 200 OK in 9ms (Views: 5.8ms | ActiveRecord: 4.1ms)
+  [1m[36mSQL (3.7ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-30 01:05:02', 'TextMate 2', '2010-11-30 01:05:02')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (4.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `tickets` (`created_at`, `description`, `project_id`, `title`, `updated_at`) VALUES ('2010-11-30 01:05:02', 'Gradients! Starbursts! Oh my!', 6, 'Make it shiny!', '2010-11-30 01:05:02')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 19:05:02 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (15.5ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Completed 200 OK in 22ms (Views: 5.6ms | ActiveRecord: 24.6ms)
+
+
+Started GET "/projects/6" for 127.0.0.1 at 2010-11-29 19:05:02 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mProject Load (5.3ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 6) LIMIT 1
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 6)[0m
+Completed 200 OK in 141ms (Views: 134.3ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/projects/6/tickets/2" for 127.0.0.1 at 2010-11-29 19:05:02 -0600
+  Processing by TicketsController#show as HTML
+  Parameters: {"project_id"=>"6", "id"=>"2"}
+  [1m[35mProject Load (0.7ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 6) LIMIT 1
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 6) AND (`tickets`.`id` = 2) LIMIT 1[0m
+Completed 200 OK in 12ms (Views: 6.8ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/projects/6/tickets/2" for 127.0.0.1 at 2010-11-29 19:05:02 -0600
+  Processing by TicketsController#destroy as HTML
+  Parameters: {"project_id"=>"6", "id"=>"2"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 6) LIMIT 1
+  [1m[36mTicket Load (0.6ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 6) AND (`tickets`.`id` = 2) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `tickets` WHERE (`tickets`.`id` = 2)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/projects/6
+Completed 302 Found in 11ms
+
+
+Started GET "/projects/6" for 127.0.0.1 at 2010-11-29 19:05:02 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 6) LIMIT 1[0m
+  [1m[35mTicket Load (0.3ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 6)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 2.7ms)
+  [1m[36mProject Load (1.7ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`name` = 'TextMate 2') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-30 01:05:02', 'TextMate 2', '2010-11-30 01:05:02')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 19:05:02 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/projects/7" for 127.0.0.1 at 2010-11-29 19:05:02 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mProject Load (6.5ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 7) LIMIT 1
+  [1m[36mTicket Load (2.9ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 7)[0m
+Completed 200 OK in 19ms (Views: 8.8ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/projects/7/edit" for 127.0.0.1 at 2010-11-29 19:05:02 -0600
+  Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mProject Load (3.0ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 7) LIMIT 1
+Rendered projects/_form.html.erb (8.1ms)
+Completed 200 OK in 20ms (Views: 15.3ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/projects/7" for 127.0.0.1 at 2010-11-29 19:05:02 -0600
+  Processing by ProjectsController#update as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>"TextMate 2 beta"}, "commit"=>"Update Project", "id"=>"7"}
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 7) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `projects` SET `name` = 'TextMate 2 beta', `updated_at` = '2010-11-30 01:05:02' WHERE (`projects`.`id` = 7)[0m
+  [1m[35mSQL (1.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/projects/7
+Completed 302 Found in 10ms
+
+
+Started GET "/projects/7" for 127.0.0.1 at 2010-11-29 19:05:02 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProject Load (10.1ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 7) LIMIT 1[0m
+  [1m[35mTicket Load (9.4ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 7)
+Completed 200 OK in 28ms (Views: 7.2ms | ActiveRecord: 21.9ms)
+  [1m[36mProject Load (2.8ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`name` = 'TextMate 2 beta') LIMIT 1[0m
+  [1m[35mSQL (5.0ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (8.0ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-30 01:05:03', 'TextMate 2', '2010-11-30 01:05:03')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 19:05:03 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (12.9ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Completed 200 OK in 20ms (Views: 6.0ms | ActiveRecord: 28.9ms)
+
+
+Started GET "/projects/8" for 127.0.0.1 at 2010-11-29 19:05:03 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mProject Load (2.1ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 8) LIMIT 1
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 8)[0m
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/projects/8/edit" for 127.0.0.1 at 2010-11-29 19:05:03 -0600
+  Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 8) LIMIT 1
+Rendered projects/_form.html.erb (9.6ms)
+Completed 200 OK in 23ms (Views: 21.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects/8" for 127.0.0.1 at 2010-11-29 19:05:03 -0600
+  Processing by ProjectsController#update as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>""}, "commit"=>"Update Project", "id"=>"8"}
+  [1m[36mProject Load (8.8ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 8) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.9ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendered projects/_form.html.erb (5.7ms)
+Completed 200 OK in 46ms (Views: 12.0ms | ActiveRecord: 12.1ms)
+  [1m[35mSQL (1.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-30 01:05:03', 'TextMate 2', '2010-11-30 01:05:03')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (1.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `tickets` (`created_at`, `description`, `project_id`, `title`, `updated_at`) VALUES ('2010-11-30 01:05:03', 'Gradients! Starbursts! Oh my!', 9, 'Make it shiny!', '2010-11-30 01:05:03')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 19:05:03 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (0.3ms)[0m  SELECT `projects`.* FROM `projects`
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/projects/9" for 127.0.0.1 at 2010-11-29 19:05:03 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 9) LIMIT 1[0m
+  [1m[35mTicket Load (0.5ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 9)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects/9/tickets/3" for 127.0.0.1 at 2010-11-29 19:05:03 -0600
+  Processing by TicketsController#show as HTML
+  Parameters: {"project_id"=>"9", "id"=>"3"}
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 9) LIMIT 1[0m
+  [1m[35mTicket Load (0.2ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 9) AND (`tickets`.`id` = 3) LIMIT 1
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/projects/9/tickets/3/edit" for 127.0.0.1 at 2010-11-29 19:05:03 -0600
+  Processing by TicketsController#edit as HTML
+  Parameters: {"project_id"=>"9", "id"=>"3"}
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 9) LIMIT 1[0m
+  [1m[35mTicket Load (0.2ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 9) AND (`tickets`.`id` = 3) LIMIT 1
+Rendered tickets/_form.html.erb (6.6ms)
+Completed 200 OK in 17ms (Views: 13.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/projects/9/tickets/3" for 127.0.0.1 at 2010-11-29 19:05:03 -0600
+  Processing by TicketsController#update as HTML
+  Parameters: {"utf8"=>"✓", "ticket"=>{"title"=>"Make it really shiny!", "description"=>"Gradients! Starbursts! Oh my!"}, "commit"=>"Update Ticket", "project_id"=>"9", "id"=>"3"}
+  [1m[36mProject Load (10.9ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 9) LIMIT 1[0m
+  [1m[35mTicket Load (4.9ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 9) AND (`tickets`.`id` = 3) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.5ms)[0m  UPDATE `tickets` SET `title` = 'Make it really shiny!', `updated_at` = '2010-11-30 01:05:03' WHERE (`tickets`.`id` = 3)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/projects/9/tickets/3
+Completed 302 Found in 32ms
+
+
+Started GET "/projects/9/tickets/3" for 127.0.0.1 at 2010-11-29 19:05:03 -0600
+  Processing by TicketsController#show as HTML
+  Parameters: {"project_id"=>"9", "id"=>"3"}
+  [1m[35mProject Load (16.4ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 9) LIMIT 1
+  [1m[36mTicket Load (1.2ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 9) AND (`tickets`.`id` = 3) LIMIT 1[0m
+Completed 200 OK in 28ms (Views: 8.4ms | ActiveRecord: 36.1ms)
+  [1m[35mProject Load (11.3ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`name` = 'TextMate 2') LIMIT 1
+  [1m[36mTicket Load (14.1ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.`title` = 'Make it really shiny!') LIMIT 1[0m
+  [1m[35mSQL (35.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-30 01:05:03', 'TextMate 2', '2010-11-30 01:05:03')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `tickets` (`created_at`, `description`, `project_id`, `title`, `updated_at`) VALUES ('2010-11-30 01:05:03', 'Gradients! Starbursts! Oh my!', 10, 'Make it shiny!', '2010-11-30 01:05:03')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 19:05:03 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (1.1ms)[0m  SELECT `projects`.* FROM `projects`
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 64.7ms)
+
+
+Started GET "/projects/10" for 127.0.0.1 at 2010-11-29 19:05:03 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mProject Load (7.1ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 10) LIMIT 1[0m
+  [1m[35mTicket Load (0.4ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 10)
+Completed 200 OK in 18ms (Views: 9.3ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/projects/10/tickets/4" for 127.0.0.1 at 2010-11-29 19:05:03 -0600
+  Processing by TicketsController#show as HTML
+  Parameters: {"project_id"=>"10", "id"=>"4"}
+  [1m[36mProject Load (3.7ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 10) LIMIT 1[0m
+  [1m[35mTicket Load (15.4ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 10) AND (`tickets`.`id` = 4) LIMIT 1
+Completed 200 OK in 28ms (Views: 6.5ms | ActiveRecord: 19.1ms)
+
+
+Started GET "/projects/10/tickets/4/edit" for 127.0.0.1 at 2010-11-29 19:05:03 -0600
+  Processing by TicketsController#edit as HTML
+  Parameters: {"project_id"=>"10", "id"=>"4"}
+  [1m[36mProject Load (11.1ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 10) LIMIT 1[0m
+  [1m[35mTicket Load (0.2ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 10) AND (`tickets`.`id` = 4) LIMIT 1
+Rendered tickets/_form.html.erb (5.3ms)
+Completed 200 OK in 25ms (Views: 11.3ms | ActiveRecord: 11.3ms)
+
+
+Started POST "/projects/10/tickets/4" for 127.0.0.1 at 2010-11-29 19:05:03 -0600
+  Processing by TicketsController#update as HTML
+  Parameters: {"utf8"=>"✓", "ticket"=>{"title"=>"", "description"=>"Gradients! Starbursts! Oh my!"}, "commit"=>"Update Ticket", "project_id"=>"10", "id"=>"4"}
+  [1m[36mProject Load (9.3ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 10) LIMIT 1[0m
+  [1m[35mTicket Load (15.1ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 10) AND (`tickets`.`id` = 4) LIMIT 1
+  [1m[36mSQL (1.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Rendered tickets/_form.html.erb (101.5ms)
+Completed 200 OK in 140ms (Views: 106.8ms | ActiveRecord: 26.0ms)
+  [1m[36mSQL (5.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (8.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Load (5.5ms)[0m  SELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('user@ticketee.com')) LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`confirmation_token` = 'pN8fa1YZ5Jj_ospH9lzy') LIMIT 1[0m
+  [1m[35mSQL (10.4ms)[0m  describe `users`
+  [1m[36mSQL (9.4ms)[0m  [1mINSERT INTO `users` (`confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `password_salt`, `remember_created_at`, `remember_token`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES ('2010-11-30 01:05:04', 'pN8fa1YZ5Jj_ospH9lzy', NULL, '2010-11-30 01:05:04', NULL, NULL, 'user@ticketee.com', '$2a$10$cGPyAd3OS/3rQRjtuxJDKOXp7g5M2XgnGAWiixX/bVJfSKL3uqnym', NULL, NULL, '$2a$10$cGPyAd3OS/3rQRjtuxJDKO', NULL, NULL, NULL, 0, '2010-11-30 01:05:04')[0m
+
+Sent mail to user@ticketee.com (187ms)
+Date: Mon, 29 Nov 2010 19:05:04 -0600
+From: please-change-me@config-initializers-devise.com
+To: user@ticketee.com
+Message-ID: <4cf44dc0d140e_631780443b3c26463@Stanford-Guillorys-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome user@ticketee.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=pN8fa1YZ5Jj_ospH9lzy">Confirm my account</a></p>
+  [1m[35mSQL (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/users/confirmation?confirmation_token=pN8fa1YZ5Jj_ospH9lzy" for 127.0.0.1 at 2010-11-29 19:05:04 -0600
+  Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"pN8fa1YZ5Jj_ospH9lzy"}
+  [1m[36mUser Load (2.8ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`confirmation_token` = 'pN8fa1YZ5Jj_ospH9lzy') LIMIT 1[0m
+  [1m[35mSQL (12.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (10.1ms)[0m  [1mUPDATE `users` SET `confirmation_token` = NULL, `confirmed_at` = '2010-11-30 01:05:04', `updated_at` = '2010-11-30 01:05:04' WHERE (`users`.`id` = 1)[0m
+  [1m[35mSQL (1.9ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE `users` SET `current_sign_in_at` = '2010-11-30 01:05:04', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_at` = '2010-11-30 01:05:04', `last_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2010-11-30 01:05:04' WHERE (`users`.`id` = 1)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 43ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 19:05:05 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (1.4ms)[0m  SELECT `projects`.* FROM `projects`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 68.4ms)
+  [1m[35mSQL (3.9ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (14.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Load (17.2ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('user@ticketee.com')) LIMIT 1[0m
+  [1m[35mUser Load (5.6ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`confirmation_token` = 'xxri045mu-n3q7-A2F9X') LIMIT 1
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO `users` (`confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `password_salt`, `remember_created_at`, `remember_token`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES ('2010-11-30 01:05:05', 'xxri045mu-n3q7-A2F9X', NULL, '2010-11-30 01:05:05', NULL, NULL, 'user@ticketee.com', '$2a$10$8B5qol8zN8Zaw0wNMIOs3ebe5t7Wl6Y8NUTjM0hdVuEOnaLcQW31C', NULL, NULL, '$2a$10$8B5qol8zN8Zaw0wNMIOs3e', NULL, NULL, NULL, 0, '2010-11-30 01:05:05')[0m
+
+Sent mail to user@ticketee.com (11ms)
+Date: Mon, 29 Nov 2010 19:05:05 -0600
+From: please-change-me@config-initializers-devise.com
+To: user@ticketee.com
+Message-ID: <4cf44dc1578d3_631780443b3c2653@Stanford-Guillorys-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome user@ticketee.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=xxri045mu-n3q7-A2F9X">Confirm my account</a></p>
+  [1m[35mSQL (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (2.8ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`email` = 'user@ticketee.com') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `confirmation_token` = NULL, `confirmed_at` = '2010-11-30 01:05:05', `updated_at` = '2010-11-30 01:05:05' WHERE (`users`.`id` = 2)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 19:05:05 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (1.6ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 48.1ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-29 19:05:05 -0600
+  Processing by Devise::SessionsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.1.5/app/views/devise/shared/_links.erb (4.8ms)
+Completed 200 OK in 46ms (Views: 44.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-29 19:05:05 -0600
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"user@ticketee.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`email` = 'user@ticketee.com') LIMIT 1
+  [1m[36mSQL (9.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `current_sign_in_at` = '2010-11-30 01:05:05', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_at` = '2010-11-30 01:05:05', `last_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2010-11-30 01:05:05' WHERE (`users`.`id` = 2)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 352ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 19:05:05 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (0.3ms)[0m  SELECT `projects`.* FROM `projects`
+  [1m[36mUser Load (5.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+Completed 200 OK in 11ms (Views: 5.0ms | ActiveRecord: 16.3ms)
+  [1m[35mSQL (16.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 19:05:06 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (6.2ms)[0m  SELECT `projects`.* FROM `projects`
+Completed 200 OK in 12ms (Views: 5.0ms | ActiveRecord: 22.4ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2010-11-29 19:05:06 -0600
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.1.5/app/views/devise/shared/_links.erb (1.2ms)
+Completed 200 OK in 39ms (Views: 38.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2010-11-29 19:05:06 -0600
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"user@ticketee.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mSQL (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Load (10.9ms)[0m  SELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('user@ticketee.com')) LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`confirmation_token` = 'vCCwnL1Uikgwl1asno9g') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `users` (`confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `password_salt`, `remember_created_at`, `remember_token`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES ('2010-11-30 01:05:06', 'vCCwnL1Uikgwl1asno9g', NULL, '2010-11-30 01:05:06', NULL, NULL, 'user@ticketee.com', '$2a$10$xjkB4aRzU6sDM7rXOZZTuO/ZOYeucULE7KK7UeoQPxGUHod2yOZF2', NULL, NULL, '$2a$10$xjkB4aRzU6sDM7rXOZZTuO', NULL, NULL, NULL, 0, '2010-11-30 01:05:06')
+
+Sent mail to user@ticketee.com (17ms)
+Date: Mon, 29 Nov 2010 19:05:06 -0600
+From: please-change-me@config-initializers-devise.com
+To: user@ticketee.com
+Message-ID: <4cf44dc27db0c_631780443b3c2667c@Stanford-Guillorys-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome user@ticketee.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=vCCwnL1Uikgwl1asno9g">Confirm my account</a></p>
+  [1m[36mSQL (10.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed   in 384ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-29 19:05:06 -0600
+  Processing by Devise::SessionsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.1.5/app/views/devise/shared/_links.erb (1.2ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 21.9ms)
+  [1m[35mSQL (4.0ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-30 01:05:06', 'TextMate 2', '2010-11-30 01:05:06')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 19:05:06 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (6.5ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Completed 200 OK in 14ms (Views: 6.1ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/projects/11" for 127.0.0.1 at 2010-11-29 19:05:06 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mProject Load (6.4ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 11) LIMIT 1
+  [1m[36mTicket Load (18.2ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 11)[0m
+Completed 200 OK in 33ms (Views: 7.2ms | ActiveRecord: 24.6ms)
+  [1m[35mProject Load (9.2ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`name` = 'TextMate 2') LIMIT 1
+  [1m[36mSQL (14.4ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (14.0ms)[0m  INSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-30 01:05:06', 'TextMate 2', '2010-11-30 01:05:06')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.8ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `tickets` (`created_at`, `description`, `project_id`, `title`, `updated_at`) VALUES ('2010-11-30 01:05:06', 'Gradients! Starbursts! Oh my!', 12, 'Make it shiny!', '2010-11-30 01:05:06')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (8.1ms)[0m  INSERT INTO `projects` (`created_at`, `name`, `updated_at`) VALUES ('2010-11-30 01:05:06', 'Internet Explorer', '2010-11-30 01:05:06')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `tickets` (`created_at`, `description`, `project_id`, `title`, `updated_at`) VALUES ('2010-11-30 01:05:06', 'Isn\'t a joke.', 13, 'Standards compliance', '2010-11-30 01:05:06')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 19:05:06 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (3.9ms)[0m  [1mSELECT `projects`.* FROM `projects`[0m
+Completed 200 OK in 13ms (Views: 8.1ms | ActiveRecord: 52.5ms)
+
+
+Started GET "/projects/12" for 127.0.0.1 at 2010-11-29 19:05:06 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 12) LIMIT 1
+  [1m[36mTicket Load (10.1ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 12)[0m
+Completed 200 OK in 23ms (Views: 11.0ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/projects/12/tickets/5" for 127.0.0.1 at 2010-11-29 19:05:06 -0600
+  Processing by TicketsController#show as HTML
+  Parameters: {"project_id"=>"12", "id"=>"5"}
+  [1m[35mProject Load (15.2ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 12) LIMIT 1
+  [1m[36mTicket Load (0.4ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 12) AND (`tickets`.`id` = 5) LIMIT 1[0m
+Completed 200 OK in 37ms (Views: 16.5ms | ActiveRecord: 15.6ms)
+  [1m[35mProject Load (8.1ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`name` = 'TextMate 2') LIMIT 1
+  [1m[36mTicket Load (1.1ms)[0m  [1mSELECT `tickets`.* FROM `tickets` WHERE (`tickets`.`title` = 'Make it shiny!') LIMIT 1[0m
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-29 19:05:06 -0600
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (19.7ms)[0m  SELECT `projects`.* FROM `projects`
+Completed 200 OK in 32ms (Views: 11.7ms | ActiveRecord: 28.8ms)
+
+
+Started GET "/projects/13" for 127.0.0.1 at 2010-11-29 19:05:07 -0600
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mProject Load (5.1ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 13) LIMIT 1[0m
+  [1m[35mTicket Load (0.3ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 13)
+Completed 200 OK in 25ms (Views: 17.9ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/projects/13/tickets/6" for 127.0.0.1 at 2010-11-29 19:05:07 -0600
+  Processing by TicketsController#show as HTML
+  Parameters: {"project_id"=>"13", "id"=>"6"}
+  [1m[36mProject Load (14.2ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`id` = 13) LIMIT 1[0m
+  [1m[35mTicket Load (0.2ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.project_id = 13) AND (`tickets`.`id` = 6) LIMIT 1
+Completed 200 OK in 34ms (Views: 16.7ms | ActiveRecord: 14.5ms)
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`name` = 'Internet Explorer') LIMIT 1[0m
+  [1m[35mTicket Load (0.7ms)[0m  SELECT `tickets`.* FROM `tickets` WHERE (`tickets`.`title` = 'Standards compliance') LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mROLLBACK[0m

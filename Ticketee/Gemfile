@@ -30,12 +30,14 @@ gem 'mysql2'
 # end
 
 group :test do
-gem 'rspec-rails'
+    gem 'rspec-rails'
 end
 
 group :cucumber do
-  gem 'cucumber-rails'
-  gem 'capybara'
+    gem 'cucumber-rails'
+    gem 'capybara'
+    gem 'email_spec'
+    #, :git => "git://github.com/bmabey/email-spec.git"
 end
 
 gem 'devise', '1.1.5'

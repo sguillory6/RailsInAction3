@@ -643,3 +643,125 @@ Migrating to DeviseCreateUsers (20101129233036)
   [1m[35mSQL (2.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101129233036')
   [1m[36mSQL (13.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101125055646')[0m
   [1m[35mSQL (6.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101129183121')
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.8ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to DeviseCreateUsers (20101129233036)
+  [1m[35mSQL (13.1ms)[0m  DROP TABLE `users`
+  [1m[36mSQL (9.3ms)[0m  [1mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20101129233036'[0m
+  [1m[35mSQL (4.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (5.3ms)[0m  [1mdescribe `projects`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `projects`
+  [1m[36mSQL (5.8ms)[0m  [1mdescribe `tickets`[0m
+  [1m[35mSQL (14.5ms)[0m  SHOW KEYS FROM `tickets`
+  [1m[36mSQL (7.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (4.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateProjects (20101125055646)
+Migrating to CreateTickets (20101129183121)
+Migrating to DeviseCreateUsers (20101129233036)
+  [1m[35mSQL (86.6ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(128) DEFAULT '' NOT NULL, `password_salt` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `remember_token` varchar(255), `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `confirmation_token` varchar(255), `confirmed_at` datetime, `confirmation_sent_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (1.5ms)[0m  [1mSHOW KEYS FROM `users`[0m
+  [1m[35mSQL (223.8ms)[0m  CREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `users`[0m
+  [1m[35mSQL (65.3ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)
+  [1m[36mSQL (17.2ms)[0m  [1mdescribe `schema_migrations`[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101129233036')
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.0ms)[0m  describe `projects`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `projects`[0m
+  [1m[35mSQL (12.6ms)[0m  describe `tickets`
+  [1m[36mSQL (4.4ms)[0m  [1mSHOW KEYS FROM `tickets`[0m
+  [1m[35mSQL (1.3ms)[0m  describe `users`
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW KEYS FROM `users`[0m
+  [1m[36mSQL (22.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (5.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to DeviseCreateUsers (20101129233036)
+  [1m[35mSQL (31.4ms)[0m  DROP TABLE `users`
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20101129233036'[0m
+  [1m[35mSQL (10.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (5.1ms)[0m  [1mdescribe `projects`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `projects`
+  [1m[36mSQL (1.8ms)[0m  [1mdescribe `tickets`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `tickets`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (3.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (2.9ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateProjects (20101125055646)
+Migrating to CreateTickets (20101129183121)
+Migrating to DeviseCreateUsers (20101129233036)
+  [1m[35mSQL (58.5ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(128) DEFAULT '' NOT NULL, `password_salt` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `remember_token` varchar(255), `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `confirmation_token` varchar(255), `confirmed_at` datetime, `confirmation_sent_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `users`[0m
+  [1m[35mSQL (254.1ms)[0m  CREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)
+  [1m[36mSQL (8.0ms)[0m  [1mSHOW KEYS FROM `users`[0m
+  [1m[35mSQL (70.1ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)
+  [1m[36mSQL (26.4ms)[0m  [1mdescribe `schema_migrations`[0m
+  [1m[35mSQL (5.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101129233036')
+  [1m[36mSQL (2.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (6.8ms)[0m  describe `projects`
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW KEYS FROM `projects`[0m
+  [1m[35mSQL (3.7ms)[0m  describe `tickets`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `tickets`[0m
+  [1m[35mSQL (3.7ms)[0m  describe `users`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `users`[0m
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (10.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (54.3ms)[0m  DROP DATABASE IF EXISTS `Ticketee_test`
+  [1m[36mSQL (18.8ms)[0m  [1mCREATE DATABASE `Ticketee_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (57.4ms)[0m  [1mCREATE TABLE `projects` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (150.9ms)[0m  [1mCREATE TABLE `tickets` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text, `project_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (75.6ms)[0m  [1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(128) DEFAULT '' NOT NULL, `password_salt` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `remember_token` varchar(255), `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `confirmation_token` varchar(255), `confirmed_at` datetime, `confirmation_sent_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (97.8ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[35mSQL (1.7ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (55.2ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (87.5ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35mSQL (5.1ms)[0m  SHOW KEYS FROM `schema_migrations`
+  [1m[36mSQL (80.8ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35mSQL (19.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (9.8ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35mSQL (16.1ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101129233036')
+  [1m[36mSQL (9.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101125055646')[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101129183121')
+  [1m[36mSQL (23.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (7.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (30.0ms)[0m  DROP DATABASE IF EXISTS `Ticketee_test`
+  [1m[36mSQL (6.7ms)[0m  [1mCREATE DATABASE `Ticketee_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (56.8ms)[0m  [1mCREATE TABLE `projects` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (124.9ms)[0m  [1mCREATE TABLE `tickets` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text, `project_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (10.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (133.1ms)[0m  [1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(128) DEFAULT '' NOT NULL, `password_salt` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `remember_token` varchar(255), `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `confirmation_token` varchar(255), `confirmed_at` datetime, `confirmation_sent_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (9.4ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (125.0ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[35mSQL (20.2ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (115.8ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (63.2ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35mSQL (13.6ms)[0m  SHOW KEYS FROM `schema_migrations`
+  [1m[36mSQL (85.6ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35mSQL (3.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101129233036')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101125055646')[0m
+  [1m[35mSQL (9.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101129183121')
